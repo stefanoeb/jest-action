@@ -17,4 +17,5 @@ fi
 
 
 echo "## Running Jest"
-sh -c "$setup ./node_modules/.bin/jest $@"
+args=$@
+sh -c "$setup ./node_modules/.bin/jest $args"
