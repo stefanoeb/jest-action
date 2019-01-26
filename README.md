@@ -1,12 +1,12 @@
-# GitHub ESLint runner
+# GitHub Jest runner
 
 This action executes Jest test runner without any previous action/build step or Docker required.
 
 ## Prerequisites
 
 ### Jest
-You must have the ESLint running locally for the action to execute. It will use the same rules as you do locally.
-More info [on the ESLint getting started guide](https://eslint.org/docs/user-guide/getting-started#installation-and-usage)
+You must have the Jest running locally for the action to execute.
+More info [on the Jest getting started guide](https://jestjs.io/docs/en/getting-started)
 
 ## Usage
 
@@ -16,24 +16,24 @@ This is the simplest example to get it running:
 ```
 workflow "New workflow" {
   on = "push"
-  resolves = ["ESLint"]
+  resolves = ["Jest"]
 }
 
-action "ESLint" {
-  uses = "stefanoeb/eslint-action@master"
+action "Jest" {
+  uses = "stefanoeb/jest-action@master"
 }
 ```
 
-By default it will run ESLint through all the files in the project. But you can also specify a glob of files on the `args`, just like ESLint:
+By default it will run Jest on all the test files in the project. But you can also specify a glob of files on the `args`, just like on the Jest CLI, as well as options:
 ```
 workflow "New workflow" {
   on = "push"
-  resolves = ["ESLint"]
+  resolves = ["Jest"]
 }
 
-action "ESLint" {
-  uses = "stefanoeb/eslint-action@master"
-  args = "index.js src/**.js"
+action "Jest" {
+  uses = "stefanoeb/jest-action@master"
+  args = "**.test.js --ci"
 }
 ```
 
