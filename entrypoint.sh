@@ -4,7 +4,7 @@
 set -e 
 
 # Setup node modules if needed
-if [ -e node_modules/.bin/eslint ]; then
+if [ -e node_modules/.bin/jest ]; then
     setup=""
 else
     echo "## Your environment is not ready yet. Installing modules..."
@@ -17,4 +17,4 @@ fi
 
 
 echo "## Running Jest"
-sh -c "$setup ./node_modules/.bin/jest $$@"
+sh -c "$setup ./node_modules/.bin/jest $@"
