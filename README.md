@@ -39,6 +39,21 @@ action "Jest" {
 
 If there is no previous step installing the necessary modules, this action will execute a `yarn install` or `npm install` automatically.
 
+Alternative: in a `.github/workflow/test.yml` file
+
+```
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/jest-action@master
+```
+
 ## License
 
 The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
