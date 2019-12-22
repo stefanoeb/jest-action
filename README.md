@@ -26,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run Jest
-      uses: stefanoeb/jest-action@master
+      uses: stefanoeb/jest-action@1.0.2
 ```
 
 You can also pass custom args to jest through the `with:` parameter:
@@ -45,7 +45,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run Jest
-      uses: stefanoeb/jest-action@master
+      uses: stefanoeb/jest-action@1.0.2
       with:
         jestArgs: path/to/my.test.js
 ```
