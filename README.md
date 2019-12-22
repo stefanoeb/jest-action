@@ -10,20 +10,46 @@ More info [on the Jest getting started guide](https://jestjs.io/docs/en/getting-
 
 ## Usage
 
-With the latest version of GitHub actions, create a `.github/workflow/test.yml` file:
+Add to your `main.workflow` file or create a new file named `.github/workflow/test.yml` and add:
 
-```
-name: Test
+```yml
+
+name: Tests
 
 on: [push]
 
 jobs:
-  test:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/jest-action@master
+    - uses: actions/checkout@v1
+    - name: Run Jest
+      uses: stefanoeb/jest-action@master
 ```
+
+You can also pass custom args to jest through the `with:` parameter:
+
+```yml
+
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run Jest
+      uses: stefanoeb/jest-action@master
+      with:
+        jestArgs: path/to/my.test.js
+```
+
 
 If there is no previous step installing the necessary modules, this action will execute a `yarn install` or `npm install` automatically.
 
