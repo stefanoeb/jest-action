@@ -10,7 +10,7 @@ More info [on the Jest getting started guide](https://jestjs.io/docs/en/getting-
 
 ## Usage
 
-Add to your `main.workflow` file or create a new file named `.github/workflow/test.yml` and add:
+Add to your `main.yml` file or create a new file named `.github/workflow/test.yml` and add:
 
 ```yml
 
