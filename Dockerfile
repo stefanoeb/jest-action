@@ -1,6 +1,6 @@
 FROM node:10.14.1-alpine
 
-apk update && \
+RUN apk update && \
     apk upgrade && \
     apk add git openssh
 
